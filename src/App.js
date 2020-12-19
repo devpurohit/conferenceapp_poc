@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { w3cwebsocket as W3CWebSocket } from "websocket";
-import {BrowserRouter, Route, withRouter } from "react-router-dom";
+import {BrowserRouter, Route } from "react-router-dom";
 import './App.css';
 import Login from './components/Login';
 import Host from './components/Host';

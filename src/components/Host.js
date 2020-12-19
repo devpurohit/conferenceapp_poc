@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import UserCard from './UserCard';
 
 class Host extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   onStartTimer(time) {
     this.props.startTimer(time);
   }

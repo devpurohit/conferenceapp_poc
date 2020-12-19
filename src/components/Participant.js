@@ -5,10 +5,6 @@ import TimeoutComponent from './Timeout';
 
 class Participant extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="participant-grid">

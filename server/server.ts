@@ -1,8 +1,8 @@
 import * as http from 'http';
-import APP_CONST from 'shared/constants';
+import APP_CONST from './constants';
 import { server  as webSocketServer, IMessage} from 'websocket';
-import ConnectionContainer from '../shared/interfaces/connection-container';
-import SocketResponse from '../shared/interfaces/socket-response';
+import ConnectionContainer from './interfaces/connection-container';
+import SocketResponse from './interfaces/socket-response';
 
 
 
@@ -43,7 +43,6 @@ wsServer.on('request', function(request) {
   console.log('connected: ' + userID);
 
   connection.on('message', function(message : IMessage) {
-    console.log('msg', message)
     if (message.type === 'utf8') {
       const dataFromClient = JSON.parse(message.utf8Data as string);
       const json: SocketResponse = { type: dataFromClient.type };
@@ -53,6 +52,7 @@ wsServer.on('request', function(request) {
         userActivity.push(`${dataFromClient.username} joined.`);
         json.data = { users, userActivity };
       } else if (dataFromClient.type === APP_CONST.typesDef.START_COUNT) {
+        console.log(dataFromClient.content)
         const countValue = dataFromClient.content;
         json.data = { countValue, userActivity };
       }

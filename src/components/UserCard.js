@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import cardBackground from './../assets/card.png'
 
 class UserCard extends Component {
   render() {
