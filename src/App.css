@@ -1,38 +1,253 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Merriweather', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.account {
+	 height: 100vh;
+	 width: 100%;
+	 min-height: 100vh;
+	 display: flex;
+	 overflow-y: auto;
+   background: #eee;
+}
+ .account.account--photo {
+	 background: #6fb9fb;
+}
+ .account.account--photo .account__card {
+	 background-color: rgba(0, 10, 16, 0.8);
+	 color: #fff;
+}
+ .account.account--photo .form__form-group-icon, .account.account--photo .form__form-group-button {
+	 background: transparent;
+}
+ .account.account--photo .form__form-group-icon, .account.account--photo input:not(:last-child) {
+	 border-right: none;
+}
+ .account.account--photo .form__form-group-button, .account.account--photo input {
+	 border-left: none;
+}
+ .account.account--photo .form__form-group-button.active {
+	 border-color: #eff1f5;
+}
+ .account.account--photo .form__form-group-button.active svg {
+	 fill: #eee;
+}
+ .account.account--photo input {
+	 color: #fff;
+}
+ .account.account--photo input:focus {
+	 border-color: #eff1f5;
+}
+ .account.account--photo p {
+	 color: #fff;
+}
+ .account.account--photo .account__title {
+	 color: #fff;
+}
+ .account__wrapper {
+	 margin: auto;
+	 padding: 10px;
+}
+ .account__card {
+	 background-color: #fff;
+   margin: 30px auto auto auto;
+	 padding: 50px 60px;
+   width: 500px;
+}
+ .account__profile {
+	 text-align: center;
+}
+ .account__btns {
+	 display: flex;
+	 width: calc(100% + 10px);
+	 margin: -10px 0 -20px -10px;
+}
+ .account__btns a {
+	 margin: 10px 0 20px 10px;
+	 white-space: nowrap;
+}
+ .account__btn {
+	 width: 100%;
+	 margin-right: 0;
+}
+ .account__avatar {
+	 height: 64px;
+	 width: 64px;
+	 border-radius: 50%;
+	 overflow: hidden;
+}
+ .account__name {
+	 font-size: 11px;
+	 text-transform: uppercase;
+	 font-weight: 700;
+	 line-height: 15px;
+	 margin: 5px 0 5px 0px;
+}
+ .account__sub {
+	 margin-top: 0;
+	 margin-bottom: 10px;
+	 color: #656262;
+	 font-size: 11px;
+	 line-height: 15px;
+}
+ .account__forgot-password {
+	 position: absolute;
+	 font-size: 11px;
+	 line-height: 15px;
+	 bottom: -18px;
+	 right: 0;
+}
+ .account__forgot-password a {
+	 color: #70bbfd;
+}
+ .account__forgot-password a:hover {
+	 color: #3ea3fc;
+	 text-decoration: none;
+}
+ .form__form-group--forgot {
+	 margin-bottom: 40px;
+}
+ .account__or {
+	 text-align: center;
+	 margin-top: 35px;
+	 margin-bottom: 20px;
+	 position: relative;
+}
+ .account__or:before, .account__or:after {
+	 content: "";
+	 height: 1px;
+	 width: calc(50% - 90px);
+	 background: #ddd;
+	 position: absolute;
+	 top: 10px;
+}
+ .account__or:before {
+	 left: 0;
+}
+ .account__or:after {
+	 right: 0;
+}
+ 
+.form-control {
+  margin: 10px 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container-fluid {
+  padding: 0px;
+}
+
+
+
+/* 
+
+		Host Component
+
+*/
+
+.grid-container {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100vw;
+	min-height: 100vh;
+	background-color: black;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .user-card {
+	background-image: url(./assets/card.png);
+	min-height: 250px;
+	min-width: 40%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	flex: 1 1 400px;
+	background-position: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .username {
+	  background-color: white;
+	  color: blueviolet;
+	  opacity: 0.7;
+	  display: inline-block;
+	  margin: 10px 0px 0px 10px;
+	  padding: 5px 10px;
+	  border-radius: 15px;
   }
+ 
+.controls {
+	display: flex;
+	position: fixed;
+	bottom: 50px;
+	justify-content: center;
+	width: 100vw;
+}
+
+.fa-phone-slash::before {
+	color: white;
+    opacity: 0.6;
+}
+
+.call-cut {
+	padding: 15px;
+	border-radius: 50%;
+	background: gray;
+	margin: 0 30px;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    width: 60px;
+	height: 60px;
+    padding: 8px;
+	margin: 0 10px;
+    background: gray;
+    color: white;
+    text-align: center;
+    font: 32px Arial, sans-serif;
+}
+
+.cdtext {
+	line-height: 55px;
+	color: white;
+	opacity: 0.6;
+}
+
+
+/* 
+Participant Component
+*/
+
+.participant-grid {
+	display: flex;
+	height: 100vh;
+}
+
+.participant-list {
+	flex: 1;
+	background-color: #6fb9fb;
+}
+
+.participant-list .user-card{
+	background-size: cover;
+}
+
+.participant-view {
+	flex: 4;
+	background-color: #656262;
+
+	background-image: url(./assets/card.png);
+	background-repeat: no-repeat;
+	background-size: strech;
+	background-position: center;
+}
+
+.timer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: white;
+	font-size: 140px;
 }
